@@ -45,8 +45,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       // print(posts.count)
-        //print("lisa loshka")
         return posts.count
     }
     
@@ -59,9 +57,7 @@ extension ViewController: UICollectionViewDataSource {
         let representedIdentifier = post.id
         cell.representedIdentifier = representedIdentifier
         cell.titleLabel.textColor = .black
-        //cell.titleLabel.numberOfLines = 2
         cell.titleLabel.text = post.description ?? "No description"
-        //print("lisa loshka")
         
         func image(data: Data?) -> UIImage? {
             if let data = data {

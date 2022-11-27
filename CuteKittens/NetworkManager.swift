@@ -44,7 +44,7 @@ class NetworkManager {
     
     private func request(url: URL) -> URLRequest {
         var request = URLRequest(url: url)
-        let accessKey = "8U56Ni1JTPLXs8Et_-qe3hLlM8T3RZhSLMS0i-litSs" //TODO: считать из файла код
+        let accessKey = "your key"
         request.addValue("Client-ID \(accessKey)", forHTTPHeaderField: "Authorization")
         return request
     }
@@ -85,8 +85,7 @@ class NetworkManager {
     }
     
     func download(imageURL: URL, completion: @escaping (Data?, Error?) -> (Void)) {
-        if let imageData = cacheImages.object(forKey: imageURL.absoluteString as NSString) {
-          //  print("using cached images")
+        if let imageData = cacheImages.object(forKey: imageURL.absoluteString as NSString) { //using cached images
             completion(imageData as Data, nil)
             return()
         }
